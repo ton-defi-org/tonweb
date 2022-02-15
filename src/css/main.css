@@ -750,6 +750,14 @@ button {
     margin-bottom: 10px;
 }
 
+#changeWalletAddress {
+    width: 580px;
+}
+
+#changeWalletAddress #changeWalletAddress_newInput {
+    width: 460px;
+}
+
 /* EXTENSION */
 
 #menu_magic {
@@ -797,6 +805,14 @@ button {
 
 .plugin #start_importLedgerHidBtn {
     display: none;
+}
+
+.plugin #changeWalletAddress {
+    width: 360px;
+}
+
+.plugin #changeWalletAddress #changeWalletAddress_newInput {
+    width: 240px;
 }
 
 #start_importLedgerHidBtn {

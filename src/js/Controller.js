@@ -446,7 +446,11 @@ class Controller {
     async onChangeWalletAddress(walletAddress) {
         await Controller.saveWalletAddress(walletAddress);
         this.sendToView('closePopup');
-        window.location.reload();
+        if (chrome.runtime) {
+            chrome.runtime.reload();
+        } else {
+            window.location.reload();
+        }
     }
 
     async onChangePassword(oldPassword, newPassword) {

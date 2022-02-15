@@ -241,6 +241,7 @@ class View {
             const walletAddress = $('#changeWalletAddress_newInput').value;
             this.sendMessage('onChangeWalletAddress', {walletAddress});
         });
+        $('#changeWalletAddress_cancelBtn').addEventListener('click', () => this.closePopup());
         $('#changeWalletAddress_restoreDefaults').addEventListener('click', async () => {
             this.sendMessage('onRestoreWalletAddress', {});
         });
