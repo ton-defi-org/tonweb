@@ -388,6 +388,10 @@ button {
     min-width: 180px;
 }
 
+#menuDropdown hr {
+    border-top: 1px solid white;
+}
+
 .dropdown-item {
     font-size: 14px;
     line-height: 30px;

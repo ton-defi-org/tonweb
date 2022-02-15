@@ -236,6 +236,15 @@ class View {
         $('#done_closeBtn').addEventListener('click', () => this.closePopup());
         $('#about_closeBtn').addEventListener('click', () => this.closePopup());
 
+        $('#menu_changeWalletAddress').addEventListener('click', () => this.onMessage('showPopup', {name: 'changeWalletAddress'}));
+        $('#changeWalletAddress_okBtn').addEventListener('click', async () => {
+            const walletAddress = $('#changeWalletAddress_newInput').value;
+            this.sendMessage('onChangeWalletAddress', {walletAddress});
+        });
+        $('#changeWalletAddress_restoreDefaults').addEventListener('click', async () => {
+            this.sendMessage('onRestoreWalletAddress', {});
+        });
+
         $('#changePassword_cancelBtn').addEventListener('click', () => this.closePopup());
         $('#changePassword_okBtn').addEventListener('click', async () => {
             const oldPassword = $('#changePassword_oldInput').value;
@@ -294,7 +303,7 @@ class View {
 
         toggle($('#modal'), name !== '');
 
-        const popups = ['receive', 'invoice', 'invoiceQr', 'send', 'sendConfirm', 'signConfirm', 'processing', 'done', 'menuDropdown', 'about', 'delete', 'changePassword', 'enterPassword', 'transaction', 'connectLedger'];
+        const popups = ['receive', 'invoice', 'invoiceQr', 'send', 'sendConfirm', 'signConfirm', 'processing', 'done', 'menuDropdown', 'about', 'delete', 'changePassword', 'changeWalletAddress', 'enterPassword', 'transaction', 'connectLedger'];
 
         popups.forEach(popup => {
             toggle($('#' + popup), name === popup);
@@ -826,6 +835,10 @@ class View {
                     case 'changePassword':
                         this.clearChangePassword();
                         $('#changePassword_oldInput').focus();
+                        break;
+                    case 'changeWalletAddress':
+                        $('#changeWalletAddress_newInput').value = window.localStorage['address'];
+                        $('#changeWalletAddress_newInput').focus();
                         break;
                     case 'enterPassword':
                         $('#enterPassword_input').focus();

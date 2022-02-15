@@ -265,6 +265,8 @@
         <div id="menu_changePassword" class="dropdown-item">Change password</div>
         <div id="menu_backupWallet" class="dropdown-item">Back up wallet</div>
         <div id="menu_delete" class="dropdown-item">Delete wallet</div>
+        <hr>
+        <div id="menu_changeWalletAddress" class="dropdown-item">Change wallet address</div>
     </div>
 
     <!-- Receive Popup-->
@@ -508,6 +510,30 @@
         <div class="popup-footer">
             <button id="changePassword_cancelBtn" class="btn-lite">CANCEL</button>
             <button id="changePassword_okBtn" class="btn-lite">SAVE</button>
+        </div>
+    </div>
+
+    <!-- Change Wallet Popup -->
+
+    <div id="changeWalletAddress" class="popup" style="display: none; padding-bottom: 10px; width: 580px;">
+        <div class="popup-title">Change Wallet Address</div>
+
+        <tgs-player data-name="changeWalletAddress" src="assets/lottie/warn.tgs" width="150" height="150"></tgs-player>
+
+        <div class="popup-black-text" style="padding-left: 40px; padding-right: 40px;">
+            Pay attention, this is an advanced feature. <br/>
+            This will cause your wallet to send transactions to a different wallet address.
+            You are responsible to make sure the updated wallet is connected to the public key of this wallet.<br/>
+            Only change your wallet address if you know what you are doing.
+        </div>
+
+        <input id="changeWalletAddress_newInput" placeholder="Enter a new wallet address" type="text"
+               style="text-align: left; width: 460px; margin-left: 40px; font-size: 15px;margin-top: 20px">
+
+        <div class="popup-footer" style="margin-top: 20px;">
+            <button id="changeWalletAddress_restoreDefaults" class="btn-lite">RESTORE DEFAULTS</button>
+            <button id="changeWalletAddress_cancelBtn" class="btn-lite">CANCEL</button>
+            <button id="changeWalletAddress_okBtn" class="btn-lite">SAVE</button>
         </div>
     </div>
 
