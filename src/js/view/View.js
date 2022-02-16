@@ -795,6 +795,10 @@ class View {
                 $('#enterPassword_input').classList.add('error');
                 break;
 
+            case 'changeWalletAddressError':
+                $('#changeWalletAddress_newInput').classList.add('error');
+                break;
+
             case 'showScreen':
                 this.showScreen(params.name);
 

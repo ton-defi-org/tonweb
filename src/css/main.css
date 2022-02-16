@@ -815,6 +815,12 @@ button {
     width: 240px;
 }
 
+.plugin #changeWalletAddress tgs-player {
+    transform: scale(0.5) translateY(-50%);
+    width: 75px;
+    height: 75px;
+}
+
 #start_importLedgerHidBtn {
     display: none;
 }

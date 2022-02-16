@@ -444,12 +444,16 @@ class Controller {
     }
 
     async onChangeWalletAddress(walletAddress) {
-        await Controller.saveWalletAddress(walletAddress);
-        this.sendToView('closePopup');
-        if (chrome.runtime) {
-            chrome.runtime.reload();
+        if (!walletAddress) {
+            this.sendToView('changeWalletAddressError');
         } else {
-            window.location.reload();
+            await Controller.saveWalletAddress(walletAddress);
+            this.sendToView('closePopup');
+            if (chrome.runtime) {
+                chrome.runtime.reload();
+            } else {
+                window.location.reload();
+            }
         }
     }
 
